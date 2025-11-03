@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <h2>Without Grouping Radio Buttons</h2>
+
+    <h3>Choose Your Favorite Fruit</h3>
+    <label><input type="radio" name="fruit"> Apple</label>
+    <label><input type="radio" name="fruit"> Banana</label>
+    <label><input type="radio" name="fruit"> Orange</label>
+
+    <h2>With Grouping Radio Buttons</h2>
+
+    <fieldset>
+        <legend>Choose Your Favorite Fruit</legend>
+
+        <div role="radiogroup" aria-labelledby="fruit">
+            <label>
+                <input type="radio" name="fruitgroup" id="apple" value="apple"> Apple
+            </label>
+            <label>
+                <input type="radio" name="fruitgroup" id="banana" value="banana"> Banana
+            </label>
+            <label>
+                <input type="radio" name="fruitgroup" id="orange" value="orange"> Orange
+            </label>
+        </div>
+    </fieldset>
+</body>
+
+</html>

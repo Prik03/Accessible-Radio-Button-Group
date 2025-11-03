@@ -1,0 +1,17 @@
+[role="radio"] {
+  padding: 10px 16px;
+  margin: 6px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  outline: none;
+}
+[role="radio"][aria-checked="true"] {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+[role="radio"]:focus-visible {
+  outline: 3px solid #2563eb;
+}
