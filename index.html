@@ -4,37 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Radio Button Accessibility Demo</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
 <body>
 
-    <h2>Without Grouping Radio Buttons</h2>
+    <h1>Accessible Radio Buttons Example</h1>
 
+
+    <h2>Grouping</h2>
+    <p>
+        Grouping radio buttons using a <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong> helps users
+        understand that the options belong to the same question or category.
+        It also improves accessibility — screen readers can announce the group label before reading each option, giving
+        users better context about what they are choosing.
+    </p>
+    <!-- Without Grouping -->
+    <h3>Without Grouping Radio Buttons</h3>
     <h3>Choose Your Favorite Fruit</h3>
     <label><input type="radio" name="fruit"> Apple</label>
     <label><input type="radio" name="fruit"> Banana</label>
     <label><input type="radio" name="fruit"> Orange</label>
 
-    <h2>With Grouping Radio Buttons</h2>
+    <!-- With Grouping -->
+    <h3>With Grouping Radio Buttons</h3>
 
     <fieldset>
         <legend>Choose Your Favorite Fruit</legend>
-
         <div role="radiogroup" aria-labelledby="fruit">
-            <label>
-                <input type="radio" name="fruitgroup" id="apple" value="apple"> Apple
-            </label>
-            <label>
-                <input type="radio" name="fruitgroup" id="banana" value="banana"> Banana
-            </label>
-            <label>
-                <input type="radio" name="fruitgroup" id="orange" value="orange"> Orange
-            </label>
+            <label><input type="radio" name="fruitgroup" id="apple" value="apple"> Apple</label>
+            <label><input type="radio" name="fruitgroup" id="banana" value="banana"> Banana</label>
+            <label><input type="radio" name="fruitgroup" id="orange" value="orange"> Orange</label>
         </div>
     </fieldset>
+
+    <!-- Name Attribute Section -->
+    <h2>Importance of the <code>name</code> Attribute</h2>
+    <p>
+        The <strong>name</strong> attribute groups radio buttons together, ensuring that only one option
+        can be selected at a time within the same group. It also improves accessibility — screen readers
+        can better identify the relationship between radio buttons and provide smoother keyboard navigation.
+    </p>
+
+    <h3>With <code>name</code> Attribute</h3>
+    <fieldset>
+        <legend>Choose Your Favorite Fruit</legend>
+        <div role="radiogroup" aria-labelledby="fruit">
+            <label><input type="radio" name="fruitname" id="apple2" value="apple"> Apple</label>
+            <label><input type="radio" name="fruitname" id="banana2" value="banana"> Banana</label>
+            <label><input type="radio" name="fruitname" id="orange2" value="orange"> Orange</label>
+        </div>
+    </fieldset>
+
+    <h3>Without <code>name</code> Attribute</h3>
+    <fieldset>
+        <legend>Choose Your Favorite Fruit</legend>
+        <div role="radiogroup" aria-labelledby="fruit">
+            <label><input type="radio" id="apple3" value="apple"> Apple</label>
+            <label><input type="radio" id="banana3" value="banana"> Banana</label>
+            <label><input type="radio" id="orange3" value="orange"> Orange</label>
+        </div>
+    </fieldset>
+
+    <!-- Label Association Section -->
+    <h2>Label Association</h2>
+    <p>
+        Associating a label with an input helps users — especially those using screen readers or assistive technologies
+        —
+        understand what each control does. Clicking the label also activates the input, improving usability.
+    </p>
+
+    <h3>With Label Association (Using <code>&lt;label&gt;</code> or <code>for</code> attribute)</h3>
+    <fieldset>
+        <legend>Choose Your Favorite Color</legend>
+        <label for="red"><input type="radio" name="color" id="red" value="red"> Red</label>
+        <label for="green"><input type="radio" name="color" id="green" value="green"> Green</label>
+        <label for="blue"><input type="radio" name="color" id="blue" value="blue"> Blue</label>
+    </fieldset>
+
+    <h3>Without Label Association</h3>
+    <fieldset>
+        <legend>Choose Your Favorite Color</legend>
+        <input type="radio" name="color2" value="red"> Red <br>
+        <input type="radio" name="color2" value="green"> Green <br>
+        <input type="radio" name="color2" value="blue"> Blue
+    </fieldset>
+
 </body>
 
 </html>

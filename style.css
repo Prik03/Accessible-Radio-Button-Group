@@ -1,17 +1,44 @@
-[role="radio"] {
-  padding: 10px 16px;
-  margin: 6px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #2b5b84;
+  border-bottom: 2px solid #2b5b84;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+fieldset {
   border: 2px solid #ccc;
   border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #2b5b84;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
   cursor: pointer;
-  background: white;
-  outline: none;
 }
-[role="radio"][aria-checked="true"] {
-  background: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
+
+input[type="radio"] {
+  margin-right: 6px;
 }
-[role="radio"]:focus-visible {
-  outline: 3px solid #2563eb;
+
+p {
+  background-color: #eef6ff;
+  padding: 10px;
+  border-left: 4px solid #2b5b84;
+  border-radius: 4px;
 }
